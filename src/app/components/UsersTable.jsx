@@ -28,18 +28,18 @@ const UsersTable = ({ users, userDeleteAction }) => {
                                 <Table.Cell className={'space-x-3'}>
 
                                     <Link href={`/users/${user._id}`}>
-                                        <Button variant='outline' className={'text-white'}>Details</Button>
+                                        <Button variant='secondary'>Details</Button>
                                     </Link>
 
-                                    <Link href={``}>
-                                        <Button variant='primary' className={'text-white'}>Edit</Button>
+                                    <Link href={`/users/${user._id}/edit`}>
+                                        <Button variant='primary'>Edit</Button>
                                     </Link>
 
                                     <AlertDialog>
                                         <Button variant="danger">Delete</Button>
                                         <AlertDialog.Backdrop>
                                             <AlertDialog.Container>
-                                                <AlertDialog.Dialog className="sm:max-w-[400px] bg-gray-900 text-white">
+                                                <AlertDialog.Dialog className="sm:max-w-[400px]">
                                                     <AlertDialog.CloseTrigger />
                                                     <AlertDialog.Header>
                                                         <AlertDialog.Icon status="danger" />

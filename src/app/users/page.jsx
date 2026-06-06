@@ -1,7 +1,8 @@
 import React from 'react';
 import { getUsers } from '../lib/data';
 import UsersTable from '../components/UsersTable';
-import { deleteUser } from '../lib/actions';
+import { addNewUser, deleteUser } from '../lib/actions';
+import AddUserModal from '../components/AddUserModal';
 
 const UsersPage = async () => {
 
@@ -9,10 +10,16 @@ const UsersPage = async () => {
     // console.log(users)
 
     const userDeleteAction = deleteUser;
+    const addNewUserAction = addNewUser;
 
     return (
         <div>
             <h2>Users Management</h2>
+
+            <div className='flex justify-center items-center'>
+                <AddUserModal addNewUserAction={addNewUserAction}></AddUserModal>
+            </div>
+
             <div className=' m-10'>
                 <UsersTable users={users} userDeleteAction={userDeleteAction}></UsersTable>
             </div>
