@@ -1,17 +1,20 @@
 import React from 'react';
 import { getUsers } from '../lib/data';
 import UsersTable from '../components/UsersTable';
+import { deleteUser } from '../lib/actions';
 
 const UsersPage = async () => {
 
     const users = await getUsers();
-    console.log(users)
+    // console.log(users)
+
+    const userDeleteAction = deleteUser;
 
     return (
         <div>
             <h2>Users Management</h2>
             <div className=' m-10'>
-                <UsersTable users={users}></UsersTable>
+                <UsersTable users={users} userDeleteAction={userDeleteAction}></UsersTable>
             </div>
 
 
